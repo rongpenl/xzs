@@ -58,7 +58,7 @@
       </div>
     </el-row>
         <el-row class="app-item-contain">
-      <h3 class="index-title-h3" style="border-left: solid 10px #3651d4;">One-Time Task</h3>
+      <h3 class="index-title-h3" style="border-left: solid 10px #3651d4;">One-Time Exams</h3>
       <div style="padding-left: 15px">
         <el-collapse  v-loading="taskLoading"  accordion v-if="taskList.length!==0">
           <el-collapse-item :title="taskItem.title" :name="taskItem.id" :key="taskItem.id" v-for="taskItem in taskList">

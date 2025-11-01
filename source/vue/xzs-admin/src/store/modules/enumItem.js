@@ -43,16 +43,16 @@ const state = {
       paperTypeEnum: [
         { key: 1, value: 'Regular Exam' },
         { key: 4, value: 'Timed Exam' },
-        { key: 6, value: 'Task Exam' }
+        { key: 6, value: 'One-time Exam' }
       ]
     },
     question: {
       typeEnum: [
-        { key: 1, value: 'Single Choice Question' },
-        { key: 2, value: 'Multiple Choice Question' },
-        { key: 3, value: 'True/False Question' },
-        { key: 4, value: 'Gap Filling Question' },
-        { key: 5, value: 'Short Answer Question' }
+        { key: 1, value: 'Single Choice' },
+        { key: 2, value: 'Multiple Choice' },
+        { key: 3, value: 'True/False' },
+        { key: 4, value: 'Fill in the Blank' },
+        { key: 5, value: 'Short Answer' }
       ],
       editUrlEnum: [
         { key: 1, value: '/exam/question/edit/singleChoice', name: 'Single Choice Question' },
