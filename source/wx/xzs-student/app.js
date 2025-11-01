@@ -61,7 +61,7 @@ App({
         success(res) {
           
           if (res.statusCode !== 200 || typeof res.data !== 'object') {
-            reject('网络出错')
+            reject('Connection failed');
             return false;
           }
 

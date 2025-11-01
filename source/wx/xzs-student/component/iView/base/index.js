@@ -5,7 +5,9 @@ function getCtx (selector) {
     const componentCtx = ctx.selectComponent(selector);
 
     if (!componentCtx) {
-        console.error('无法找到对应的组件，请按文档说明使用组件');
+        console.error(
+            'Can not find component for selector: ' + selector
+        );
         return null;
     }
     return componentCtx;

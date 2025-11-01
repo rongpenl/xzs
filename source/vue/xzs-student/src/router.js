@@ -5,8 +5,8 @@ import Layout from '@/layout'
 Vue.use(Router)
 const router = new Router({
   routes: [
-    { path: '/login', name: 'Login', component: () => import('@/views/login/index'), meta: { title: '登录', bodyBackground: '#fbfbfb' } },
-    { path: '/register', name: 'Register', component: () => import('@/views/register/index'), meta: { title: '注册', bodyBackground: '#fbfbfb' } },
+    { path: '/login', name: 'Login', component: () => import('@/views/login/index'), meta: { title: 'Login', bodyBackground: '#fbfbfb' } },
+    { path: '/register', name: 'Register', component: () => import('@/views/register/index'), meta: { title: 'Register', bodyBackground: '#fbfbfb' } },
     {
       path: '/',
       component: Layout,
@@ -16,7 +16,7 @@ const router = new Router({
           path: 'index',
           component: () => import('@/views/dashboard/index'),
           name: 'Dashboard',
-          meta: { title: '首页' }
+          meta: { title: 'Home' }
         }
       ]
     },
@@ -28,7 +28,7 @@ const router = new Router({
           path: 'index',
           component: () => import('@/views/paper/index'),
           name: 'PaperIndex',
-          meta: { title: '试卷中心' }
+          meta: { title: 'Exam Center' }
         }
       ]
     },
@@ -40,7 +40,7 @@ const router = new Router({
           path: 'index',
           component: () => import('@/views/record/index'),
           name: 'RecordIndex',
-          meta: { title: '考试记录' }
+          meta: { title: 'Exam Records' }
         }
       ]
     },
@@ -52,7 +52,7 @@ const router = new Router({
           path: 'index',
           component: () => import('@/views/question-error/index'),
           name: 'QuestionErrorIndex',
-          meta: { title: '错题本' }
+          meta: { title: 'Wrong Questions' }
         }
       ]
     },
@@ -64,7 +64,7 @@ const router = new Router({
           path: 'index',
           component: () => import('@/views/user-info/index'),
           name: 'UserInfo',
-          meta: { title: '个人中心' }
+          meta: { title: 'Personal Center' }
         }
       ]
     },
@@ -76,13 +76,13 @@ const router = new Router({
           path: 'message',
           component: () => import('@/views/user-info/message'),
           name: 'UserMessage',
-          meta: { title: '消息中心' }
+          meta: { title: 'Message Center' }
         }
       ]
     },
-    { path: '/do', name: 'ExamPaperDo', component: () => import('@/views/exam/paper/do'), meta: { title: '试卷答题' } },
-    { path: '/edit', name: 'ExamPaperEdit', component: () => import('@/views/exam/paper/edit'), meta: { title: '试卷批改' } },
-    { path: '/read', name: 'ExamPaperRead', component: () => import('@/views/exam/paper/read'), meta: { title: '试卷查看' } },
+    { path: '/do', name: 'ExamPaperDo', component: () => import('@/views/exam/paper/do'), meta: { title: 'Exam Answering' } },
+    { path: '/edit', name: 'ExamPaperEdit', component: () => import('@/views/exam/paper/edit'), meta: { title: 'Exam Grading' } },
+    { path: '/read', name: 'ExamPaperRead', component: () => import('@/views/exam/paper/read'), meta: { title: 'Exam Viewing' } },
     { path: '*', component: () => import('@/views/error-page/404'), meta: { title: '404' }
     }
   ]

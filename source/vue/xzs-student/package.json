@@ -5,10 +5,9 @@
   "description": "学之思开源考试系统",
   "license": "AGPL-3.0",
   "private": true,
-  "homepage": "https://www.mindskip.net/xzs.html",
   "scripts": {
     "serve": "vue-cli-service serve --mode dev",
-    "build": "vue-cli-service build --mode prod",
+    "build": "rm -rf student; rm -rf ../../xzs/src/main/resources/static/student/; vue-cli-service build --mode prod; cp -r student ../../xzs/src/main/resources/static",
     "build:dev": "vue-cli-service build --mode dev",
     "build:test": "vue-cli-service build --mode test",
     "build:pre": "vue-cli-service build --mode pre",

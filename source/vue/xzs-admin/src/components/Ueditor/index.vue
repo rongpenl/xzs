@@ -18,7 +18,6 @@ export default {
   data () {
     return {
       randomId: 'editor_' + Math.random() * 100000000000000000,
-      // 编辑器实例
       instance: null,
       ready: false
     }

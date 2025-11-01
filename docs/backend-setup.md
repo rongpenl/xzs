@@ -79,7 +79,7 @@ mvn clean package -DskipTests
 
 ```bash
 # 启动Spring Boot应用（端口8000）
-java -jar target/xzs-3.9.0.jar --server.port=8000
+java -jar target/system-1.0.0.jar --server.port=8000
 ```
 
 ### 3. 验证运行状态

@@ -10,8 +10,8 @@
       <div class="bullshit">
         <div class="bullshit__oops">OOPS!</div>
         <div class="bullshit__headline">{{ message }}</div>
-        <div class="bullshit__info">请检查你的访问地址是否正确, 或点击下面按钮返回主页.</div>
-        <a href="" class="bullshit__return-home">返回主页</a>
+        <div class="bullshit__info">Please check your access address is correct, or click the button below to return to the homepage.</div>
+        <a href="" class="bullshit__return-home">Return to Homepage</a>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
   name: 'Page404',
   computed: {
     message () {
-      return '页面未找到...'
+      return 'Page Not Found';
     }
   }
 }

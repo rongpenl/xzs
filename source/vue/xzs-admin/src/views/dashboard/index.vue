@@ -8,7 +8,7 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              试卷总数
+              Total Exams
             </div>
             <count-to :start-val="0" :end-val="examPaperCount" :duration="2600" class="card-panel-num" v-loading="loading"/>
           </div>
@@ -21,7 +21,7 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              题目总数
+              Total Questions
             </div>
             <count-to :start-val="0" :end-val="questionCount" :duration="3000" class="card-panel-num" v-loading="loading"/>
           </div>
@@ -34,7 +34,7 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              答卷总数
+              Total Exams Submitted
             </div>
             <count-to :start-val="0" :end-val="doExamPaperCount" :duration="3600" class="card-panel-num" v-loading="loading"/>
           </div>
@@ -47,7 +47,7 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">
-              答题总数
+              Total Questions Answered
             </div>
             <count-to :start-val="0" :end-val="doQuestionCount" :duration="3200" class="card-panel-num" v-loading="loading"/>
           </div>
@@ -67,6 +67,9 @@
 import resize from './components/mixins/resize'
 import CountTo from 'vue-count-to'
 import dashboardApi from '@/api/dashboard'
+// 引入 ECharts 并加载主题（避免运行时找不到 echarts 全局变量）
+import * as echarts from 'echarts'
+import 'echarts/theme/macarons'
 export default {
   mixins: [resize],
   components: {
@@ -96,13 +99,13 @@ export default {
       _this.questionCount = response.questionCount
       _this.doExamPaperCount = response.doExamPaperCount
       _this.doQuestionCount = response.doQuestionCount
-      _this.echartsUserAction.setOption(this.option('用户活跃度', '{b}日{c}度', response.mothDayText, response.mothDayUserActionValue))
-      _this.echartsQuestion.setOption(this.option('题目月数量', '{b}日{c}题', response.mothDayText, response.mothDayDoExamQuestionValue))
+      _this.echartsUserAction.setOption(this.option('User Activity', '{b} day {c} activity', response.mothDayText, response.mothDayUserActionValue))
+      _this.echartsQuestion.setOption(this.option('Questions per Month', '{b} day {c} questions', response.mothDayText, response.mothDayDoExamQuestionValue))
       this.loading = false
     })
   },
   methods: {
-    option (title, formatter, label, vaule) {
+    option (title, formatter, label, value) {
       return {
         title: {
           text: title,
@@ -127,7 +130,7 @@ export default {
           type: 'value'
         },
         series: [{
-          data: vaule,
+          data: value,
           type: 'line'
         }]
       }

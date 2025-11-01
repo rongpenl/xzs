@@ -36,7 +36,6 @@ router.beforeEach(async (to, from, next) => {
 
   if (to.path) {
     // eslint-disable-next-line no-undef
-    _hmt.push(['_trackPageview', '/#' + to.fullPath])
   }
   next()
 })

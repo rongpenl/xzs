@@ -20,7 +20,7 @@ Component({
         },
         cancelText: {
             type: String,
-            value: '取消'
+            value: 'Cancelled'
         },
         actions: {
             type: Array,

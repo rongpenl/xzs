@@ -18,8 +18,8 @@
     <el-header class="align-center">
       <h1>{{form.name}}</h1>
       <div>
-        <span class="question-title-padding">试卷得分：{{answer.score}}</span>
-        <span class="question-title-padding">试卷耗时：{{formatSeconds(answer.doTime)}}</span>
+        <span class="question-title-padding">Total Score：{{answer.score}}</span>
+        <span class="question-title-padding">Exam Duration：{{formatSeconds(answer.doTime)}}</span>
       </div>
     </el-header>
     <el-main>

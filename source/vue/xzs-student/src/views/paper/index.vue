@@ -8,12 +8,12 @@
           </el-radio-group>
         </el-row>
         <el-table v-loading="listLoading" :data="tableData" fit highlight-current-row style="width: 100%">
-          <el-table-column prop="id" label="序号" width="90px"/>
-          <el-table-column prop="name" label="名称"  />
+          <el-table-column prop="id" label="Order" width="90px"/>
+          <el-table-column prop="name" label="Name"  />
           <el-table-column align="right">
             <template slot-scope="{row}">
               <router-link target="_blank" :to="{path:'/do',query:{id:row.id}}">
-                <el-button  type="text" size="small">开始答题</el-button>
+                <el-button  type="text" size="small">Start</el-button>
               </router-link>
             </template>
           </el-table-column>

@@ -3,24 +3,24 @@
      <el-row :gutter="50">
        <el-col :span="18">
          <el-table v-loading="listLoading" :data="tableData" fit highlight-current-row style="width: 100%" @row-click="itemSelect">
-           <el-table-column prop="id" label="序号" width="90px"/>
-           <el-table-column prop="paperName" label="名称"  />
-           <el-table-column prop="subjectName" label="学科"  width="70" />
-           <el-table-column label="状态" prop="status" width="100px">
+           <el-table-column prop="id" label="Order" width="90px"/>
+           <el-table-column prop="paperName" label="Name"  />
+           <el-table-column prop="subjectName" label="Subject"  width="120" />
+           <el-table-column label="Status" prop="status" width="100px">
              <template slot-scope="{row}">
                <el-tag :type="statusTagFormatter(row.status)">
                  {{ statusTextFormatter(row.status) }}
                </el-tag>
              </template>
            </el-table-column>
-           <el-table-column prop="createTime" label="做题时间"  width="170" />
+           <el-table-column prop="createTime" label="Attempt Time"  width="170" />
            <el-table-column  align="right" width="70">
              <template slot-scope="{row}">
                <router-link target="_blank" :to="{path:'/edit',query:{id:row.id}}" v-if="row.status === 1 ">
-                 <el-button  type="text" size="small">批改</el-button>
+                 <el-button  type="text" size="small"></el-button>
                </router-link>
                <router-link target="_blank" :to="{path:'/read',query:{id:row.id}}" v-if="row.status === 2 ">
-                 <el-button  type="text" size="small">查看试卷</el-button>
+                 <el-button  type="text" size="small">View Paper</el-button>
                </router-link>
              </template>
            </el-table-column>
@@ -31,22 +31,22 @@
        <el-col  :span="6" >
          <el-card  class="record-answer-info">
             <el-form label-width="50%" >
-              <el-form-item label="系统判分：">
+              <el-form-item label="Auto Graded Score：">
                 <span>{{selectItem.systemScore}}</span>
               </el-form-item>
-              <el-form-item label="最终得分：">
+              <el-form-item label="Final Score：">
                 <span>{{selectItem.userScore}}</span>
               </el-form-item>
-              <el-form-item label="试卷总分：">
+              <el-form-item label="Paper Score：">
                 <span>{{selectItem.paperScore}}</span>
               </el-form-item>
-              <el-form-item label="正确题数：">
+              <el-form-item label="Correct Questions：">
                 <span>{{selectItem.questionCorrect}}</span>
               </el-form-item>
-              <el-form-item label="总题数：">
+              <el-form-item label="Total Questions：">
                 <span>{{selectItem.questionCount}}</span>
               </el-form-item>
-              <el-form-item label="用时：">
+              <el-form-item label="Time Taken：">
                 <span>{{selectItem.doTime}}</span>
               </el-form-item>
             </el-form>

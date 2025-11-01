@@ -1,29 +1,29 @@
 // initial state
 const state = {
   user: {
-    sexEnum: [{ key: 1, value: '男' }, { key: 2, value: '女' }],
-    levelEnum: [{ key: 1, value: '一年级' }, { key: 2, value: '二年级' }, { key: 3, value: '三年级' }, { key: 4, value: '四年级' }, { key: 5, value: '五年级' }, { key: 6, value: '六年级' },
-      { key: 7, value: '初一' }, { key: 8, value: '初二' }, { key: 9, value: '初三' },
-      { key: 10, value: '高一' }, { key: 11, value: '高二' }, { key: 12, value: '高三' }],
-    roleEnum: [{ key: 1, value: '学生' }, { key: 2, value: '教师' }, { key: 3, value: '管理员' }],
+    sexEnum: [{ key: 1, value: 'male' }, { key: 2, value: 'female' }],
+    levelEnum: [{ key: 1, value: 'Grade 1' }, { key: 2, value: 'Grade 2' }, { key: 3, value: 'Grade 3' }, { key: 4, value: 'Grade 4' }, { key: 5, value: 'Grade 5' }, { key: 6, value: 'Grade 6' },
+      { key: 7, value: 'Junior 1' }, { key: 8, value: 'Junior 2' }, { key: 9, value: 'Junior 3' },
+      { key: 10, value: 'Senior 1' }, { key: 11, value: 'Senior 2' }, { key: 12, value: 'Senior 3' }],
+    roleEnum: [{ key: 1, value: 'Student' }, { key: 2, value: 'Teacher' }, { key: 3, value: 'Admin' }],
     message: {
       readTag: [{ key: true, value: 'success' }, { key: false, value: 'warning' }],
-      readText: [{ key: true, value: '已读' }, { key: false, value: '未读' }]
+      readText: [{ key: true, value: 'Read' }, { key: false, value: 'Unread' }]
     }
   },
   exam: {
     examPaper: {
-      paperTypeEnum: [{ key: 1, value: '固定试卷' }, { key: 4, value: '时段试卷' }]
+      paperTypeEnum: [{ key: 1, value: 'Regular Exam' }, { key: 4, value: 'Timed Exam' }]
     },
     examPaperAnswer: {
-      statusEnum: [{ key: 1, value: '待批改' }, { key: 2, value: '完成' }],
+      statusEnum: [{ key: 1, value: 'Pending Review' }, { key: 2, value: 'Completed' }],
       statusTag: [{ key: 1, value: 'warning' }, { key: 2, value: 'success' }]
     },
     question: {
-      typeEnum: [{ key: 1, value: '单选题' }, { key: 2, value: '多选题' }, { key: 3, value: '判断题' }, { key: 4, value: '填空题' }, { key: 5, value: '简答题' }],
+      typeEnum: [{ key: 1, value: 'Single Choice' }, { key: 2, value: 'Multiple Choice' }, { key: 3, value: 'True/False' }, { key: 4, value: 'Fill in the Blank' }, { key: 5, value: 'Short Answer' }],
       answer: {
         doRightTag: [{ key: true, value: 'success' }, { key: false, value: 'danger' }, { key: null, value: 'warning' }],
-        doRightEnum: [{ key: true, value: '正确' }, { key: false, value: '错误' }, { key: null, value: '待批改' }],
+        doRightEnum: [{ key: true, value: 'Correct' }, { key: false, value: 'Incorrect' }, { key: null, value: 'Pending Review' }],
         doCompletedTag: [{ key: false, value: 'info' }, { key: true, value: 'success' }]
       }
     }

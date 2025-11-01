@@ -48,26 +48,26 @@
         </div>
       </div>
       <div class="question-answer-show-item" style="margin-top: 15px">
-        <span class="question-show-item">结果：</span>
+        <span class="question-show-item">Results：</span>
         <el-tag :type="doRightTagFormatter(answer.doRight)">
           {{ doRightTextFormatter(answer.doRight) }}
         </el-tag>
       </div>
       <div class="question-answer-show-item">
-        <span class="question-show-item">分数：</span>
+        <span class="question-show-item">Score：</span>
         <span>{{question.score}}</span>
       </div>
       <div class="question-answer-show-item">
-        <span class="question-show-item">难度：</span>
+        <span class="question-show-item">Difficulty：</span>
         <el-rate disabled v-model="question.difficult" class="question-show-item"></el-rate>
       </div>
       <br/>
       <div class="question-answer-show-item" style="line-height: 1.8">
-        <span class="question-show-item">解析：</span>
+        <span class="question-show-item">Analysis：</span>
         <span v-html="question.analyze" class="q-item-span-content" />
       </div>
       <div class="question-answer-show-item">
-        <span class="question-show-item">正确答案：</span>
+        <span class="question-show-item">Correct Answer：</span>
         <span v-if="qType==1||qType==2 ||qType==5" v-html="question.correct" class="q-item-span-content"/>
         <span v-if="qType==3" v-html="trueFalseFormatter(question)" class="q-item-span-content"/>
         <span v-if="qType==4">{{question.correctArray}}</span>

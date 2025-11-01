@@ -20,13 +20,12 @@ Component({
         },
         okText: {
             type: String,
-            value: '确定'
+            value: 'Confirm'
         },
         cancelText: {
             type: String,
-            value: '取消'
+            value: 'Cancel'
         },
-        // 按钮组，有此值时，不显示 ok 和 cancel 按钮
         actions: {
             type: Array,
             value: []

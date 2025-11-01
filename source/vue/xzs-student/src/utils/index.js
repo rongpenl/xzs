@@ -39,7 +39,7 @@ export function parseTime (time, cFormat) {
     let value = formatObj[key]
     // Note: getDay() returns 0 on Sunday
     // eslint-disable-next-line standard/computed-property-even-spacing
-    if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value ] }
+    if (key === 'a') { return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][value ] }
     if (result.length > 0 && value < 10) {
       value = '0' + value
     }
@@ -66,14 +66,14 @@ export function formatTime (time, option) {
   const diff = (now - d) / 1000
 
   if (diff < 30) {
-    return '刚刚'
+    return 'Just now'
   } else if (diff < 3600) {
     // less 1 hour
-    return Math.ceil(diff / 60) + '分钟前'
+    return Math.ceil(diff / 60) + ' minutes ago'
   } else if (diff < 3600 * 24) {
-    return Math.ceil(diff / 3600) + '小时前'
+    return Math.ceil(diff / 3600) + ' hours ago '
   } else if (diff < 3600 * 24 * 2) {
-    return '1天前'
+    return '1 day ago'
   }
   if (option) {
     return parseTime(time, option)
@@ -81,13 +81,13 @@ export function formatTime (time, option) {
     return (
       d.getMonth() +
       1 +
-      '月' +
+      ' months ' +
       d.getDate() +
-      '日' +
+      ' days ' +
       d.getHours() +
-      '时' +
+      ' hours ' +
       d.getMinutes() +
-      '分'
+      ' minutes'
     )
   }
 }
@@ -251,15 +251,12 @@ export function debounce (func, wait, immediate) {
   let timeout, args, context, timestamp, result
 
   const later = function () {
-    // 据上一次触发时间间隔
-    const last = +new Date() - timestamp
 
-    // 上次被包装函数被调用时间间隔 last 小于设定时间间隔 wait
+    const last = +new Date() - timestamp
     if (last < wait && last > 0) {
       timeout = setTimeout(later, wait - last)
     } else {
       timeout = null
-      // 如果设定为immediate===true，因为开始边界已经调用过了此处无需调用
       if (!immediate) {
         result = func.apply(context, args)
         if (!timeout) context = args = null
@@ -271,7 +268,6 @@ export function debounce (func, wait, immediate) {
     context = this
     timestamp = +new Date()
     const callNow = immediate && !timeout
-    // 如果延时不存在，重新设定延时
     if (!timeout) timeout = setTimeout(later, wait)
     if (callNow) {
       result = func.apply(context, args)
@@ -363,12 +359,12 @@ export function formatSeconds (theTime) {
       theTime1 = parseInt(theTime1 % 60)
     }
   }
-  let result = '' + parseInt(theTime) + '秒'
+  let result = '' + parseInt(theTime) + ' seconds'
   if (theTime1 > 0) {
-    result = '' + parseInt(theTime1) + '分' + result
+    result = '' + parseInt(theTime1) + ' minutes ' + result
   }
   if (theTime2 > 0) {
-    result = '' + parseInt(theTime2) + '小时' + result
+    result = '' + parseInt(theTime2) + ' hours ' + result
   }
   return result
 }

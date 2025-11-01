@@ -7,23 +7,23 @@
       <div class="lowin-box lowin-login">
         <div class="lowin-box-inner">
           <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
-            <p>学之思开源考试系统</p>
+            <p>Exam System</p>
             <div class="lowin-group">
-              <label>用户名 </label>
-              <el-input ref="userName" v-model="loginForm.userName" class="lowin-input" placeholder="用户名" name="userName" type="text" tabindex="1" auto-complete="on"/>
+              <label>Username </label>
+              <el-input ref="userName" v-model="loginForm.userName" class="lowin-input" placeholder="Username" name="userName" type="text" tabindex="1" auto-complete="on"/>
             </div>
             <div class="lowin-group password-group">
-              <label>密码 <a href="#" class="forgot-link">忘记密码?</a></label>
+              <label>Password <a href="#" class="forgot-link">Forgot Password?</a></label>
               <el-input  class="lowin-input" :key="passwordType" ref="password" v-model="loginForm.password" :type="passwordType"
-                placeholder="密码" name="password" tabindex="2" auto-complete="on" @keyup.native="checkCapslock" @blur="capsTooltip = false" @keyup.enter.native="handleLogin"/>
+                placeholder="Password" name="password" tabindex="2" auto-complete="on" @keyup.native="checkCapslock" @blur="capsTooltip = false" @keyup.enter.native="handleLogin"/>
             </div>
 
-            <el-button :loading="loading" type="text" class="lowin-btn login-btn"  @click.native.prevent="handleLogin">登录</el-button>
+            <el-button :loading="loading" type="text" class="lowin-btn login-btn"  @click.native.prevent="handleLogin">Login</el-button>
 
             <div class="text-foot">
-              还没有账号?
+              Don't have an account?
               <router-link to="/register" class="register-link">
-                注册
+                Register
               </router-link>
             </div>
           </el-form>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="account-foot-copyright">
-      <span>Copyright ©2019-2025 武汉思维跳跃科技有限公司 版权所有</span>
+      <span>Copyright ©2019-2025 Wuhan Mindskip Technology Co., Ltd. All Rights Reserved</span>
     </div>
   </div>
 </template>
@@ -45,14 +45,14 @@ export default {
   data () {
     const validateUsername = (rule, value, callback) => {
       if (value.length < 5) {
-        callback(new Error('用户名不能少于5个字符'))
+        callback(new Error('Username cannot be less than 5 characters'))
       } else {
         callback()
       }
     }
     const validatePassword = (rule, value, callback) => {
       if (value.length < 5) {
-        callback(new Error('密码不能少于5个字符'))
+        callback(new Error('Password cannot be less than 5 characters'))
       } else {
         callback()
       }

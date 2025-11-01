@@ -40,10 +40,6 @@ Component({
             const indexItems = this.getRelationNodes('../index-item/index');
             const len = indexItems.length;
             const fixedData = this.data.fixedData;
-            /*
-             * 使用函数节流限制重复去设置数组内容进而限制多次重复渲染
-             * 暂时没有研究微信在渲染的时候是否会进行函数节流
-            */
             if (len > 0) {
 
                 if( this.data.timer ){
