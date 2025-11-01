@@ -12,7 +12,7 @@ server:
 #logging logback
 logging:
   config: classpath:logback-spring.xml
-  file: xzs
+  file: exam-system
 
 #mybatis
 mybatis:
@@ -39,10 +39,10 @@ system:
       - /api/wx/student/auth/checkBind
       - /api/wx/student/user/register
   qn: # 七牛云储存
-    url: http://xzs.file.mindskip.net
-    bucket: mindskip
-    access-key: KabOBTPGVll2sSV8d1OIlW8G4_n_cReE7RSsLafA
-    secret-key: mSltk9_9KtCdFetCmxvvCAgsBg8JZHiXMuQeqSJA
+    url:
+    bucket:
+    access-key:
+    secret-key:
 
 
 #mybatis page helper
